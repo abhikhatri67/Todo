@@ -1,0 +1,14 @@
+<h3>Todo</h3>
+
+<input type="text" [(ngModel)]="todo" ngModel>
+<button *ngIf="!isEdit" (click)="addTodo(todo)">Add</button>
+<button *ngIf="isEdit" (click)="editTodoSave(todo)">Save</button>
+<div>
+    <ul>
+        <li *ngFor="let task of taskList">
+            <span>{{task.taskList}}</span>
+            <button (click)="deleteTaskFunc(task)">Delete</button>
+            <button (click)="editTodo(task)">Edit</button>
+        </li>
+    </ul>
+</div>
